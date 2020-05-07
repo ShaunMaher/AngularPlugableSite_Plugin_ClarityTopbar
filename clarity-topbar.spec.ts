@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavigationTopbarComponent } from './navigation-topbar.component';
+import { ClarityTopbarComponent } from './clarity-topbar.component';
 
-describe('NavigationTopbarComponent', () => {
-  let component: NavigationTopbarComponent;
-  let fixture: ComponentFixture<NavigationTopbarComponent>;
+describe('ClarityTopbarComponent', () => {
+  let component:ClarityTopbarComponent;
+  let fixture: ComponentFixture<ClarityTopbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationTopbarComponent ]
+      declarations: [ ClarityTopbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavigationTopbarComponent);
+    fixture = TestBed.createComponent(ClarityTopbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

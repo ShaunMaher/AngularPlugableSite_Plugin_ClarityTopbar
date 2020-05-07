@@ -6,16 +6,16 @@ import { CommonModule } from '@angular/common';
 // import { MatToolbarModule } from '@angular/material/toolbar';
 // import { MatButtonModule } from '@angular/material/button';
 
-import { NavigationTopbarComponent } from './navigation-topbar.component';
+import { ClarityTopbarComponent } from './clarity-topbar.component';
 import { SharedModule } from 'shared';
 
 @NgModule({
   imports: [CommonModule, SharedModule],
-  declarations: [NavigationTopbarComponent],
-  entryComponents: [NavigationTopbarComponent]
+  declarations: [ClarityTopbarComponent],
+  entryComponents: [ClarityTopbarComponent]
 })
-export class NavigationTopbarModule {
-  static entry = NavigationTopbarComponent;
+export class ClarityTopbarModule {
+  static entry = ClarityTopbarComponent;
 
   constructor() {
     console.log(this);

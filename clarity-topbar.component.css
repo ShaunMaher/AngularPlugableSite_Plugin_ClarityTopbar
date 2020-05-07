@@ -6,15 +6,19 @@
   min-height: 48px;
 }
 
-.nav-topbar {
-  height: 48px;
+.clarity-nav-topbar {
+  -height: 48px;
   background-image: linear-gradient(to right, #22192f , #1A1122);
-  color: white;
+  -color: white;
   position: fixed;
   top: 0px;
   left: 0px;
+  width: 100%;
 }
 
+body {
+  padding-top: 5em;
+}
 .nav-topbar-flatbutton {
   background-color: transparent;
 }

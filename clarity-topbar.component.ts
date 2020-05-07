@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Subscription } from "rxjs";
 import { Observable, of } from 'rxjs';
-//import { SharedModule } from 'shared';
-import { Item, SharedService } from '../../shared/lib/shared.service';
+import { ClarityModule } from "@clr/angular";
 import { NavigationItem, NavigationService } from '../../shared/lib/navigation.service';
-import { SomeService } from '../../app/app/services/some.service';
 
 // import { MatMenuModule } from '@angular/material/menu';
 // import { MatIconModule } from '@angular/material/icon';
@@ -13,24 +12,16 @@ import { SomeService } from '../../app/app/services/some.service';
 
 @Component({
   selector: 'app-nav',
-  templateUrl: './navigation-topbar.component.html',
-  styleUrls: ['./navigation-topbar.component.css'],
-  //providers: [SharedService, NavigationService]
+  templateUrl: './clarity-topbar.component.html',
+  styleUrls: ['./clarity-topbar.component.css'],
 })
-export class NavigationTopbarComponent implements OnInit {
+export class ClarityTopbarComponent implements OnInit {
   pageTitle: Observable<string>;
   primaryNavigationItems: Observable<NavigationItem[]>;
   secondaryNavigationItems: Observable<NavigationItem[]>;
   navigationService:NavigationService;
 
-  //loading = true;
-  //errors: any;
-
-  //private queryCategories: Subscription;
-
-  constructor(navigationService: NavigationService, someService: SomeService) {
-    //this.navigationService = navigationService;
-
+  constructor(navigationService: NavigationService, private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
     let newItem = new NavigationItem(5, "test item");
     navigationService.addSecondaryNavigationItem(newItem);
     this.primaryNavigationItems = navigationService.getPrimaryNavigationItems();
@@ -39,16 +30,9 @@ export class NavigationTopbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this);
-    // this.queryCategories = this.apollo
-    //   .watchQuery({
-    //     query: CATEGORIES_QUERY
-    //   })
-    //   .valueChanges.subscribe(result => {
-    //     this.data = result.data;
-    //     this.loading = result.loading;
-    //     this.errors = result.errors;
-    //   });
+    // We need to add padding to the top of the page so that some of the page
+    //  content doesn't end up behind the navigation bar
+    this.renderer.setStyle(this.document.body, 'padding-top', '5em');
   }
   ngOnDestroy() {
     // this.queryCategories.unsubscribe();
