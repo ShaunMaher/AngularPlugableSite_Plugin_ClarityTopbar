@@ -6,9 +6,13 @@
   min-height: 48px;
 }
 
+.site-logo {
+  
+}
+
 .clarity-nav-topbar {
   -height: 48px;
-  background-image: linear-gradient(to right, #22192f , #1A1122);
+  background-image: linear-gradient(to right, #1c0241 , #2a114f);
   -color: white;
   position: fixed;
   top: 0px;
