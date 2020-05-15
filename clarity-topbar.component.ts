@@ -22,8 +22,8 @@ export class ClarityTopbarComponent implements OnInit {
   navigationService:NavigationService;
 
   constructor(navigationService: NavigationService, private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
-    let newItem = new NavigationItem(5, "test item");
-    navigationService.addSecondaryNavigationItem(newItem);
+    //let newItem = new NavigationItem(5, "test item");
+    //navigationService.addSecondaryNavigationItem(newItem);
     this.primaryNavigationItems = navigationService.getPrimaryNavigationItems();
     this.secondaryNavigationItems = navigationService.getSecondaryNavigationItems();
     this.pageTitle = navigationService.getPageTitle();

@@ -1,14 +1,16 @@
 <header class="header-6 clarity-nav-topbar">
   <div class="branding">
-    <a class="logo-and-title" routerlink="/" href="/">
+    <a class="logo-and-title">
       <span class="clr-icon site-logo" style="background-image: url('assets/plugins/site-logo-200.png'); width: 2.4rem; height: 2.4rem;"></span>
       <span class="title" style="font-size: 1.2rem">{{ pageTitle | async }}</span>
     </a>
   </div>
   <div class="header-nav">
-    <a mat-menu-item *ngFor="let item of primaryNavigationItems | async" class="nav-link nav-text" style=" text-transform: capitalize">
-      {{ item.name }}
-    </a>
+    <span *ngFor="let item of primaryNavigationItems | async">
+      <a routerLink="{{ item.routerLink }}" routerLinkActive="active" mat-menu-item class="nav-link nav-text" style=" text-transform: capitalize">
+        {{ item.label }}
+      </a>
+    </span>
   </div>
   <!-- button mat-icon-button class="uk-link-reset" style="margin-right:1em; color: white">
     More <mat-icon>arrow_drop_down</mat-icon>
